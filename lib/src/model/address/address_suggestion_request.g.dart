@@ -32,9 +32,7 @@ AddressSuggestionRequest _$AddressSuggestionRequestFromJson(
         $enumDecodeNullable(_$LevelBoundryTypeEnumMap, json['from_bound']),
     lowerBoundary:
         $enumDecodeNullable(_$LevelBoundryTypeEnumMap, json['to_bound']),
-  )..location = (json['location'] as Map<String, dynamic>?)?.map(
-      (k, e) => MapEntry(k, e as String),
-    );
+  );
 }
 
 Map<String, dynamic> _$AddressSuggestionRequestToJson(
@@ -49,7 +47,6 @@ Map<String, dynamic> _$AddressSuggestionRequestToJson(
       'locations_boost':
           instance.locationsPriority?.map((e) => e.toJson()).toList(),
       'from_bound': instance.upperBoundary,
-      'location': instance.location,
       'to_bound': instance.lowerBoundary,
     };
 

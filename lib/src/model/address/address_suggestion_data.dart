@@ -3,6 +3,22 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'address_suggestion_data.g.dart';
 
+@JsonEnum()
+enum QcGeoType {
+  @JsonValue(0)
+  preciseCoordinates,
+  @JsonValue(1)
+  nearestHouse,
+  @JsonValue(2)
+  Street,
+  @JsonValue(3)
+  Settlement,
+  @JsonValue(4)
+  city,
+  @JsonValue(5)
+  notFound
+}
+
 /// Represents an object used to hold address data
 @JsonSerializable(explicitToJson: true)
 class AddressSuggestionData {
@@ -251,7 +267,7 @@ class AddressSuggestionData {
   /// 4 - City
   /// 5 - Coordinates not defined
   @JsonKey(name: 'qc_geo')
-  String? qcGeo;
+  QcGeoType? qcGeo;
 
   /// Suitable for mailing
   /// 0 - Suitable for mailing

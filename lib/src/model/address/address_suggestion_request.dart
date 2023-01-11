@@ -31,7 +31,6 @@ class AddressSuggestionRequest implements SuggestionRequest {
 
   LevelBoundryType? _upperBoundary;
   LevelBoundryType? _lowerBoundary;
-  String? _country;
 
   @JsonKey(name: 'from_bound')
   Map<String, String>? get upperBoundary {
@@ -48,15 +47,6 @@ class AddressSuggestionRequest implements SuggestionRequest {
       return;
     }
     _upperBoundary = null;
-  }
-
-  @JsonKey(name: 'location')
-  Map<String, String>? get location {
-    return {'country': '${_country}'};
-  }
-
-  set location(dynamic value) {
-    _country = value;
   }
 
   @JsonKey(name: 'to_bound')
@@ -88,10 +78,8 @@ class AddressSuggestionRequest implements SuggestionRequest {
     this.locationsPriority,
     LevelBoundryType? upperBoundary,
     LevelBoundryType? lowerBoundary,
-    String country = '*',
   })  : _upperBoundary = upperBoundary,
-        _lowerBoundary = lowerBoundary,
-        _country = country;
+        _lowerBoundary = lowerBoundary;
 
   factory AddressSuggestionRequest.fromJson(Map<String, dynamic> json) =>
       _$AddressSuggestionRequestFromJson(json);

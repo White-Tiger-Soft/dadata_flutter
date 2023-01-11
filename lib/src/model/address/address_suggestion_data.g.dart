@@ -87,7 +87,7 @@ AddressSuggestionData _$AddressSuggestionDataFromJson(
           ?.map((e) => MetroStation.fromJson(e as Map<String, dynamic>))
           .toList()
       ..qc = json['qc'] as String?
-      ..qcGeo = json['qc_geo'] as String?
+      ..qcGeo = $enumDecodeNullable(_$QcGeoTypeEnumMap, json['qc_geo'])
       ..qcComplete = json['qc_complete'] as String?
       ..qcHouse = json['qc_house'] as String?
       ..historyValues = (json['history_values'] as List<dynamic>?)
@@ -175,10 +175,19 @@ Map<String, dynamic> _$AddressSuggestionDataToJson(
       'beltway_distance': instance.beltwayDistance,
       'metro': instance.metro?.map((e) => e.toJson()).toList(),
       'qc': instance.qc,
-      'qc_geo': instance.qcGeo,
+      'qc_geo': _$QcGeoTypeEnumMap[instance.qcGeo],
       'qc_complete': instance.qcComplete,
       'qc_house': instance.qcHouse,
       'history_values': instance.historyValues,
       'unparsed_parts': instance.unparsedParts,
       'source': instance.source,
     };
+
+const _$QcGeoTypeEnumMap = {
+  QcGeoType.preciseCoordinates: 0,
+  QcGeoType.nearestHouse: 1,
+  QcGeoType.Street: 2,
+  QcGeoType.Settlement: 3,
+  QcGeoType.city: 4,
+  QcGeoType.notFound: 5,
+};

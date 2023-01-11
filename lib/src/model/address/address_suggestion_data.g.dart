@@ -184,10 +184,10 @@ Map<String, dynamic> _$AddressSuggestionDataToJson(
     };
 
 const _$QcGeoTypeEnumMap = {
-  QcGeoType.preciseCoordinates: 0,
-  QcGeoType.nearestHouse: 1,
-  QcGeoType.Street: 2,
-  QcGeoType.Settlement: 3,
-  QcGeoType.city: 4,
-  QcGeoType.notFound: 5,
+  QcGeoType.preciseCoordinates: '0',
+  QcGeoType.nearestHouse: '1',
+  QcGeoType.Street: '2',
+  QcGeoType.Settlement: '3',
+  QcGeoType.city: '4',
+  QcGeoType.notFound: '5',
 };

@@ -52,7 +52,7 @@ class AddressSuggestionRequest implements SuggestionRequest {
 
   @JsonKey(name: 'location')
   Map<String, String>? get location {
-    return {'country': '${_upperBoundary.value}'};
+    return {'country': '${_country}'};
   }
 
   set location(dynamic value) {

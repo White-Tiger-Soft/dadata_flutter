@@ -5,17 +5,17 @@ part 'address_suggestion_data.g.dart';
 
 @JsonEnum()
 enum QcGeoType {
-  @JsonValue(0)
+  @JsonValue('0')
   preciseCoordinates,
-  @JsonValue(1)
+  @JsonValue('1')
   nearestHouse,
-  @JsonValue(2)
+  @JsonValue('2')
   Street,
-  @JsonValue(3)
+  @JsonValue('3')
   Settlement,
-  @JsonValue(4)
+  @JsonValue('4')
   city,
-  @JsonValue(5)
+  @JsonValue('5')
   notFound
 }
 

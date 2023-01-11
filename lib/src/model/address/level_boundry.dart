@@ -1,25 +1,25 @@
 ///Levels of `from_bound` and `to_bound` according to
 ///Dadata online API documentation https://confluence.hflabs.ru/pages/viewpage.action?pageId=285343795.
-enum LevelBoundry { country, region, area, city, settlement, street, house }
+enum LevelBoundryType { country, region, area, city, settlement, street, house }
 
-/// Helper extension of [LevelBoundry] enum.
-extension LevelBoundryValue on LevelBoundry? {
+/// Helper extension of [LevelBoundryType] enum.
+extension LevelBoundryValue on LevelBoundryType? {
   /// Returns string value of a enum case.
   String? get value {
     switch (this) {
-      case LevelBoundry.country:
+      case LevelBoundryType.country:
         return 'country';
-      case LevelBoundry.region:
+      case LevelBoundryType.region:
         return 'region';
-      case LevelBoundry.area:
+      case LevelBoundryType.area:
         return 'area';
-      case LevelBoundry.city:
+      case LevelBoundryType.city:
         return 'city';
-      case LevelBoundry.settlement:
+      case LevelBoundryType.settlement:
         return 'settlement';
-      case LevelBoundry.street:
+      case LevelBoundryType.street:
         return 'street';
-      case LevelBoundry.house:
+      case LevelBoundryType.house:
         return 'house';
       default:
         return null;
@@ -27,23 +27,23 @@ extension LevelBoundryValue on LevelBoundry? {
   }
 
   /// Converts string [value] to enum case if available.
-  /// Please check [LevelBoundry] for available cases.
-  static LevelBoundry? forValue(String value) {
+  /// Please check [LevelBoundryType] for available cases.
+  static LevelBoundryType? forValue(String value) {
     switch (value) {
       case 'country':
-        return LevelBoundry.country;
+        return LevelBoundryType.country;
       case 'region':
-        return LevelBoundry.region;
+        return LevelBoundryType.region;
       case 'area':
-        return LevelBoundry.area;
+        return LevelBoundryType.area;
       case 'city':
-        return LevelBoundry.city;
+        return LevelBoundryType.city;
       case 'settlement':
-        return LevelBoundry.settlement;
+        return LevelBoundryType.settlement;
       case 'street':
-        return LevelBoundry.street;
+        return LevelBoundryType.street;
       case 'house':
-        return LevelBoundry.house;
+        return LevelBoundryType.house;
       default:
         return null;
     }

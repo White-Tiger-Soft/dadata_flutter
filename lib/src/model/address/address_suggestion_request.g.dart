@@ -29,8 +29,9 @@ AddressSuggestionRequest _$AddressSuggestionRequestFromJson(
             AddressSuggestionPriority.fromJson(e as Map<String, dynamic>))
         .toList(),
     upperBoundary:
-        $enumDecodeNullable(_$LevelBoundryEnumMap, json['from_bound']),
-    lowerBoundary: $enumDecodeNullable(_$LevelBoundryEnumMap, json['to_bound']),
+        $enumDecodeNullable(_$LevelBoundryTypeEnumMap, json['from_bound']),
+    lowerBoundary:
+        $enumDecodeNullable(_$LevelBoundryTypeEnumMap, json['to_bound']),
   );
 }
 
@@ -49,12 +50,12 @@ Map<String, dynamic> _$AddressSuggestionRequestToJson(
       'to_bound': instance.lowerBoundary,
     };
 
-const _$LevelBoundryEnumMap = {
-  LevelBoundry.country: 'country',
-  LevelBoundry.region: 'region',
-  LevelBoundry.area: 'area',
-  LevelBoundry.city: 'city',
-  LevelBoundry.settlement: 'settlement',
-  LevelBoundry.street: 'street',
-  LevelBoundry.house: 'house',
+const _$LevelBoundryTypeEnumMap = {
+  LevelBoundryType.country: 'country',
+  LevelBoundryType.region: 'region',
+  LevelBoundryType.area: 'area',
+  LevelBoundryType.city: 'city',
+  LevelBoundryType.settlement: 'settlement',
+  LevelBoundryType.street: 'street',
+  LevelBoundryType.house: 'house',
 };

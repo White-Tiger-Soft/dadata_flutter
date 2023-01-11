@@ -29,12 +29,12 @@ class AddressSuggestionRequest implements SuggestionRequest {
   @JsonKey(name: 'locations_boost')
   List<AddressSuggestionPriority>? locationsPriority;
 
-  LevelBoundry? _upperBoundary;
-  LevelBoundry? _lowerBoundary;
+  LevelBoundryType? _upperBoundary;
+  LevelBoundryType? _lowerBoundary;
 
   @JsonKey(name: 'from_bound')
-  String? get upperBoundary {
-    return _upperBoundary.value;
+  Map<String, String>? get upperBoundary {
+    return {'value': '${_upperBoundary.value}'};
   }
 
   set upperBoundary(dynamic value) {
@@ -42,7 +42,7 @@ class AddressSuggestionRequest implements SuggestionRequest {
       _upperBoundary = LevelBoundryValue.forValue(value);
       return;
     }
-    if (value is LevelBoundry) {
+    if (value is LevelBoundryType) {
       _upperBoundary = value;
       return;
     }
@@ -50,8 +50,8 @@ class AddressSuggestionRequest implements SuggestionRequest {
   }
 
   @JsonKey(name: 'to_bound')
-  String? get lowerBoundary {
-    return _lowerBoundary.value;
+  Map<String, String>? get lowerBoundary {
+    return {'value': '${_lowerBoundary.value}'};
   }
 
   set lowerBoundary(dynamic value) {
@@ -59,7 +59,7 @@ class AddressSuggestionRequest implements SuggestionRequest {
       _lowerBoundary = LevelBoundryValue.forValue(value);
       return;
     }
-    if (value is LevelBoundry) {
+    if (value is LevelBoundryType) {
       _lowerBoundary = value;
     }
     _lowerBoundary = null;
@@ -76,8 +76,8 @@ class AddressSuggestionRequest implements SuggestionRequest {
     this.constraints,
     this.radiusConstraints,
     this.locationsPriority,
-    LevelBoundry? upperBoundary,
-    LevelBoundry? lowerBoundary,
+    LevelBoundryType? upperBoundary,
+    LevelBoundryType? lowerBoundary,
   })  : _upperBoundary = upperBoundary,
         _lowerBoundary = lowerBoundary;
 
